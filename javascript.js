@@ -1,7 +1,17 @@
 const container = document.querySelector("#container")
 let grid = 16;
 let gridLayout = []
-const windowWidth = innerWidth
+
+const windowWidth = (innerWidth) + "px"
+const windowHeight = (innerHeight) + "px"
+
+if (innerHeight < innerWidth) {
+    container.style.width = (windowHeight)
+    container.style.height = (windowHeight)
+} else if (innerWidth < innerHeight) {
+    container.style.width = (windowWidth)
+    container.style.height = (windowWidth)
+}
 
 function createGrid() {    
 
