@@ -11,10 +11,16 @@ function createGrid() {
 
         gridLayout[i].style.width = (gridWidth)
 
-        gridLayout[i].addEventListener("mouseover", function() {console.log(`hovered over ${i}`)})
+        gridLayout[i].addEventListener("mouseover", function() {gridColor(i)})
 
         container.appendChild(gridLayout[i])
     }
+}
+
+function gridColor(i) {
+    if (gridLayout[i].classList.contains("black")) {
+        return
+    } else (gridLayout[i].classList.add("black"))
 }
 
 
