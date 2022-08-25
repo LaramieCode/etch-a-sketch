@@ -2,9 +2,10 @@ const container = document.querySelector("#container")
 let grid = 16;
 let gridLayout = []
 const windowWidth = innerWidth
-const gridWidth = (100 / grid) + "%" // 100 represents 100% of the screen and grid is what to divide that by
 
 function createGrid() {    
+
+    let gridWidth = (100 / grid) + "%" // 100 represents 100% of the screen and grid is what to divide that by
 
     for (let i = 0; i < grid * grid; i++) {
         gridLayout[i] = document.createElement("div")
@@ -23,6 +24,15 @@ function gridColor(i) {
     } else (gridLayout[i].classList.add("black"))
 }
 
+function newGrid() {
+    grid = prompt("How big grid?")
+    gridLayout.forEach(clearGrid)
+    createGrid()
+}
+
+function clearGrid(item, index, array) {
+    container.removeChild(array[index])
+}
 
 
 
