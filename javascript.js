@@ -13,6 +13,9 @@ if (innerHeight < innerWidth) {
     container.style.height = (windowWidth)
 }
 
+const button = document.querySelector("#btn")
+button.addEventListener("click", function() {newGrid()})
+
 function createGrid() {    
 
     let gridWidth = (100 / grid) + "%" // 100 represents 100% of the screen and grid is what to divide that by
@@ -36,8 +39,15 @@ function gridColor(i) {
 
 function newGrid() {
     grid = prompt("How big grid?")
-    gridLayout.forEach(clearGrid)
-    createGrid()
+    if (grid > 48) {
+        grid = 16;
+        alert("Grid can be no bigger than 48x48")
+        newGrid()
+    } else {
+        gridLayout.forEach(clearGrid)
+        createGrid()
+
+    }
 }
 
 function clearGrid(item, index, array) {
