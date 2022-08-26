@@ -31,4 +31,6 @@
     width: 600px;
     border: 40px solid rgb(0, 40, 87);
     background-color: white;
+    display: flex;
+    flex-wrap: wrap;
 }
