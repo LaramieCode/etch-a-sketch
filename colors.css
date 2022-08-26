@@ -1,24 +1,24 @@
-.colorBlack {
+.colorBlack, #black {
     background-color: black;
 }
-.colorWhite {
+.colorWhite, #white {
     background-color: white;
 }
-.colorOrange {
+.colorOrange, #orange {
     background-color: orange;
 }
-.colorYellow {
+.colorYellow, #yellow {
     background-color: yellow;
 }
-.colorRed {
+.colorRed, #red {
     background-color: red;
 }
-.colorGreen {
+.colorGreen, #green {
     background-color: green;
 }
-.colorBlue {
+.colorBlue, #blue {
     background-color: blue;
 }
-.colorPurple {
+.colorPurple, #purple {
     background-color: purple;
 }
