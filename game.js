@@ -1,8 +1,11 @@
 const gridContainer = document.querySelector("#gridContainer")
 
+const colors = ["colorBlack", "colorWhite", "colorOrange", "colorYellow", "colorRed", "colorGreen", "colorBlue", "colorPurple"]
+
 let gridSize = 16
 let gridLayout = []
 let gridWidth = 100 / gridSize + "%"
+let color = "colorBlack"
 
 
 
@@ -22,8 +25,11 @@ function createGrid() {
 }
 
 function gridPainter(i) {
-    console.log(gridLayout[i])
-    gridLayout[i].classList.add("colorBlack")
+    gridLayout[i].classList.add(color)
+}
+
+function colorPicker(className) {
+    color = className
 }
 
 createGrid()
