@@ -1,10 +1,13 @@
 const gridContainer = document.querySelector("#gridContainer")
+let gridSizeSlider = document.querySelector("#gridSizeSlider")
+let gridSliderValue = document.querySelector("#gridSliderValue")
+let resetButton = document.querySelector("#resetButton")
 
 const colors = ["colorBlack", "colorWhite", "colorOrange", "colorYellow", "colorRed", "colorGreen", "colorBlue", "colorPurple"]
 
 let gridSize = 16
 let gridLayout = []
-let gridWidth = 100 / gridSize + "%"
+// let gridWidth = 100 / gridSize + "%"
 let color = "colorBlack"
 
 const black = document.querySelector("#black")
@@ -26,6 +29,9 @@ purple.addEventListener("click", function() {colorPicker(colors[7])})
 
 // create grid
 function createGrid() {
+
+    let gridWidth = 100 / gridSize + "%"
+
     for (let i = 0; i < gridSize * gridSize; i++) {
 
         gridLayout[i] = document.createElement("div")
@@ -36,6 +42,11 @@ function createGrid() {
         gridContainer.appendChild(gridLayout[i])
     }
 }
+// delete grid
+function deleteGrid() {
+    gridLayout.forEach((item, index)=>{gridContainer.removeChild(gridLayout[index])})
+    gridLayout = []
+}
 
 function gridPainter(i) {
     gridLayout[i].className = ""
@@ -45,5 +56,18 @@ function gridPainter(i) {
 function colorPicker(className) {
     color = className
 }
+
+// slider update
+gridSizeSlider.oninput = function() {
+    gridSliderValue.innerHTML = this.value;
+    gridSize = +this.value
+}
+
+// reset button
+resetButton.addEventListener("click", function() {
+    deleteGrid()
+    createGrid()
+})
+
 
 createGrid()
